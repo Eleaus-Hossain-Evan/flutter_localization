@@ -36,9 +36,9 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    this._fetchLocale().then((locale) {
+    _fetchLocale().then((locale) {
       setState(() {
-        this._locale = locale;
+        _locale = locale;
       });
     });
   }
@@ -69,10 +69,7 @@ class _MyAppState extends State<MyApp> {
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
-      supportedLocales: const [
-        Locale('en', ''),
-        Locale('ar', ''),
-      ],
+      supportedLocales: AppLocalizations.supportedLocales,
       onGenerateTitle: (context) {
         return AppLocalizations.of(context)!.appTitle;
       },

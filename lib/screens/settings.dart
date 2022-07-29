@@ -21,7 +21,7 @@ class _SettingsState extends State<Settings> {
           children: [
             Text(t.settingsScreen),
             const SizedBox(height: 20),
-            Row(
+            Wrap(
               children: [
                 OutlinedButton(
                   onPressed: () {
@@ -40,6 +40,15 @@ class _SettingsState extends State<Settings> {
                     });
                   },
                   child: const Text('Switch to Arabic'),
+                ),
+                OutlinedButton(
+                  onPressed: () {
+                    // lookupAppLocalizations(const Locale("ar"));
+                    setState(() {
+                      MyApp.setLocale(context, Locale("bn", ""));
+                    });
+                  },
+                  child: const Text('Switch to Bangla'),
                 ),
               ],
             ),
